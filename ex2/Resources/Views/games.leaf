@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container" style="text-align:center;">
+        <h1>Games</h1>
+        <p>Welcome to Games</p>
+     </div>
+      
+     <div class="container">
+     <h2> Create </h2>
+          <form method="POST" action="/game/create">
+            <div class="form-group">
+               <input type="text" name="id" class="form-control" value="#(game.id)" disabled>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="name" name="name" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="publisher id" name="publisherId" class="form-control">
+            </div>
+            <button type="submit" name="button" class="btn btn-info">Add</button>
+          </form>  
+      </div>
+      
+      
+      <div class="container">
+	<h2> Read </h2>
+        #for(game in gamesList):
+                        <div class="form-group input-group">
+                             <input type="text" name="id" class="form-control" value="#(game.id)" disabled>
+                            <input type="text" name="name" class="form-control" value="#(game.name)" disabled>
+                            <input type="text" name="publisherId" class="form-control" value="#(game.publisherId)" disabled>
+                        </div>
+        #endfor
+        </div>
+      </div>
+    
+    
+      <div class="container">
+          <h2>Update</h2>
+          #for(game in gamesList):
+           <form method="POST" action="/game/update/#(game.id)">
+                         <div class="form-group">
+                                <input type="text" name="id" class="form-control" value="#(game.id)" disabled>
+                         </div>
+                        <div class="form-group">
+                                <input type="text" name="name" class="form-control" value="#(game.name)">
+                        </div>
+                        <div class="form-group">
+                                <input type="text" name="publisherId" class="form-control" value="#(game.publisherId)">
+                        </div>
+                        <div>
+				<button type="submit" name="button2" class="btn btn-primary">Update</button>
+                        </div>
+            </form>
+           #endfor
+      </div>
+      
+      <div class="container">
+      	<h2>Delete</h2>
+       	#for(game in gamesList):
+       		<form method="POST" action="/game/delete/#(game.id)">
+                        <div class="form-group input-group">
+                            <input type="text" name="id" class="form-control" value="#(game.id)" disabled>
+                            <input type="text" name="name" class="form-control" value="#(game.name)" disabled>
+                            <input type="text" name="publisherId" class="form-control" value="#(game.publisherId)" disabled>
+                        </div>
+                        <div>
+				<button type="submit" name="button3" class="btn btn-danger">Delete</button>
+                        </div>
+                </form>
+        #endfor
+      </div>
+
+  </body>
+</html>
+
