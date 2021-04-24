@@ -11,9 +11,11 @@ import MMentel.ex4.repository.Repository
 
 @Service 
 class Authenticator @Autowired constructor(val repository: Repository){
-	fun register(user: User): User {
-		return repository.save(user)
-	}
+	fun register(user: User) = repository.save(user)
+    
+    fun signin(username: String, password: String) = repository.findByUsernameAndPassword(username, password)
+
+    fun signout(username: String) = repository.findByUsername(username)
 }
 
 
@@ -25,6 +27,15 @@ class UserController @Autowired constructor(val authenticator: Authenticator) {
 	fun register(@RequestBody user: User): User {
 		return authenticator.register(user)
 	}
-
+    @GetMapping("/signin")
+    fun signin(@RequestParam("username") username: String, @RequestParam("password") password: String): String {
+        val user = authenticator.signin(username, password)
+        return user.username
+    }
+    @GetMapping("/signout")
+    fun signin(@RequestParam("username") username: String): String {
+        val user = authenticator.signout(username)
+        return user.username
+    }
 
 }
