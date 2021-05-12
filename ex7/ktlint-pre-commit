@@ -1,0 +1,8 @@
+#!/bin/sh
+git diff --name-only --cached --relative | grep '\.kt[s"]\?$' | xargs ktlint -F --relative .
+if [ $? -ne 0 ]; then 
+	echo "ktlint says it's not ok"
+	exit 1;
+else 
+	echo "ktlint says it's ok" 
+fi
