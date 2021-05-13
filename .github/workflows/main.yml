@@ -35,4 +35,4 @@ jobs:
 
       - name: Build
         run: |
-          go build /ex3/server.go
+          go build -v ex3/server.go
