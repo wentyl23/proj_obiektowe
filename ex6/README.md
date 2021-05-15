@@ -1,1 +1,9 @@
 EX6 Sonar
+
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=wentyl23_proj_obiektowe&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=wentyl23_proj_obiektowe) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=wentyl23_proj_obiektowe&metric=bugs)](https://sonarcloud.io/dashboard?id=wentyl23_proj_obiektowe)
+
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=wentyl23_proj_obiektowe&metric=security_rating)](https://sonarcloud.io/dashboard?id=wentyl23_proj_obiektowe) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=wentyl23_proj_obiektowe&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=wentyl23_proj_obiektowe)
+
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=wentyl23_proj_obiektowe&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=wentyl23_proj_obiektowe) [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=wentyl23_proj_obiektowe&metric=sqale_index)](https://sonarcloud.io/dashboard?id=wentyl23_proj_obiektowe) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=wentyl23_proj_obiektowe&metric=code_smells)](https://sonarcloud.io/dashboard?id=wentyl23_proj_obiektowe)
+
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=wentyl23_proj_obiektowe&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=wentyl23_proj_obiektowe)
