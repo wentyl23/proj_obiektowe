@@ -13,3 +13,11 @@ Maintainability:
 
 Duplication:
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=wentyl23_proj_obiektowe&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=wentyl23_proj_obiektowe)
+
+Before change:
+![alt text](sonar_images/sonar1.jpg)
+
+![alt text](sonar_images/sonar2.jpg)
+
+After change:
+![alt text](sonar_images/sonar3.jpg)
