@@ -21,18 +21,20 @@ func main() {
 		AllowOrigins: []string{"*"},
 		AllowMethods: []string{echo.GET, echo.PUT, echo.POST, echo.DELETE},
 	}))
+
+    route := "/employee"
 	
 	s := singleton.GetInstance()
 	s.Open()
 	
-	e.DELETE("/employee/:id", func(c echo.Context) error{
+	e.DELETE(route + "/:id", func(c echo.Context) error{
 	
-		requested_id := c.Param("id")
-		s.Delete(requested_id)
+		requestedId := c.Param("id")
+		s.Delete(requestedId)
 		return c.JSON(http.StatusOK, "Deleted")
 	
 	})
-	e.POST("/employee", func(c echo.Context) error{
+	e.POST(route, func(c echo.Context) error{
 		emp := new (model.Employee)
 		if err := c.Bind(emp); err != nil {
 			return err
@@ -41,7 +43,7 @@ func main() {
 		return c.JSON(http.StatusCreated, emp.Name)
 	})
 	
-	e.PUT("/employee", func(c echo.Context) error{
+	e.PUT(route, func(c echo.Context) error{
 		emp := new (model.Employee)
 		if err := c.Bind(emp); err != nil {
 			return err 
@@ -51,7 +53,7 @@ func main() {
 	})
 	
 	
-	e.GET("/employee", func(c echo.Context) error{
+	e.GET(route, func(c echo.Context) error{
 		result, err := s.GetAll()
 		if err != nil{
 			return err
@@ -59,9 +61,9 @@ func main() {
 		return c.JSON(http.StatusCreated, result)
 	})
 	
-	e.GET("/employee/:id", func(c echo.Context) error{
-		requested_id := c.Param("id")
-		result := s.GetSingle(requested_id)
+	e.GET(route + "/:id", func(c echo.Context) error{
+		requestedId := c.Param("id")
+		result := s.GetSingle(requestedId)
 		return c.JSON(http.StatusOK, result)
 	})
 	

@@ -8,5 +8,6 @@ class Ex4ApplicationTests {
 
     @Test
     fun contextLoads() {
+        return
     }
 }

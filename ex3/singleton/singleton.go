@@ -108,12 +108,12 @@ func (s *Singleton) GetAll() (*model.Employees, error) {
 	return &result, nil
 }
 
-func (s *Singleton) GetSingle(requested_id string) *model.Employee{
+func (s *Singleton) GetSingle(requestedId string) *model.Employee{
 	var id int64
 	var name string 
 	var age string
 	
-	err := s.db.QueryRow("SELECT id, name, age FROM employee WHERE id = ?", requested_id).Scan(&id, &name, &age)
+	err := s.db.QueryRow("SELECT id, name, age FROM employee WHERE id = ?", requestedId).Scan(&id, &name, &age)
 	if err != nil {
 		fmt.Println(err)
 	}
